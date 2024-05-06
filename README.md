@@ -17,7 +17,7 @@ This is the group project of Dimitris and Stratos for a Voice Assistant which ca
 * Custom solutions in Github that support real-time transcription: [RealtimeSTT](https://github.com/KoljaB/RealtimeSTT), [whisper_real_time](https://github.com/davabase/whisper_real_time)
 * [Colab Notebook](https://colab.research.google.com/drive/1Z6VIRZ_sX314hyev3Gm5gBqvm1wQVo-a#scrollTo=xuKJ4wBU6gxx) for ASR using online recording
 
-__NOTE 1__: The STT should support at least English and Dutch. <br />
+__NOTE 1__: The STT should support at least English, Dutch, Turkish, Polish, Arabic, Ukranian. Probably more will be added. Thus, we are looking for flexible solutions that offer great variety in languages. <br />
 __NOTE 2__: There are also commercial solutions. For example, Google Cloud, Amazon Web, Microsoft Azure, AssemblyAI, Deepgram etc.
 
 ### Part 2: LLM ###
@@ -29,7 +29,7 @@ Free Models: <br />
 Paid Model: <br />
 * OpenAI's [ChatGPT](https://platform.openai.com/docs/quickstart)
 
-__NOTE 1__: The LLM should support at least English and Dutch. <br />
+__NOTE 1__: The LLM should support English, Dutch, Turkish, Polish, Arabic, Ukranian or at least Engilish/Dutch and translation to all those. <br />
 
 ### Part 3: TTS ###
 
