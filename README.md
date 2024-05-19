@@ -29,7 +29,7 @@ Free Models: <br />
 Paid Model: <br />
 * OpenAI's [ChatGPT](https://platform.openai.com/docs/quickstart)
 
-__NOTE 1__: The LLM should support English, Dutch, Turkish, Polish, Arabic, Ukranian or at least Engilish/Dutch and translation to all those. <br />
+__NOTE 1__: The LLM should support English, Dutch, Turkish, Polish, Arabic, Ukranian, Persion (perhaps) or at least Engilish/Dutch and translation to all those. <br />
 
 ### Part 3: TTS ###
 
