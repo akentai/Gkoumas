@@ -1,7 +1,7 @@
 # Gkoumas
 This is the group project of Dimitris and Stratos for a Voice Assistant which can be used for Educational purpose in Dutch environment.
 
-[Project Management](https://docs.google.com/spreadsheets/d/1Mk_LopbRcgjdDRA6spxBz9kBBXhoJNzxNEPxIUwL0a8/edit?usp=sharing)
+[Project Management Page](https://docs.google.com/spreadsheets/d/1Mk_LopbRcgjdDRA6spxBz9kBBXhoJNzxNEPxIUwL0a8/edit?usp=sharing)
 
 ## Project Structure ##
 * Part 1: Speech Recognition, Transcription, Speech to Text (STT), Automatic Speech Recognition (ASR), Wakeword
