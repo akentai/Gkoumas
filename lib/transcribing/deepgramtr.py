@@ -7,7 +7,9 @@ class DeepgramTranscriber(Transcriber):
 
     def __init__(self):
         self.client = deepgram.DeepgramClient(api_key=os.environ["DGR_API_KEY"])
-        self.options = deepgram.PrerecordedOptions(model="nova-2",
+        self.options = deepgram.PrerecordedOptions(model="nova-2-general",
+                                                   detect_language=True,
+                                                   punctuate=True,
                                                    smart_format=True)
 
 

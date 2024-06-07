@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from sounddevice import InputStream, play
+from sounddevice import InputStream
 import numpy as np
 from scipy.io.wavfile import write
 
@@ -19,12 +19,5 @@ class Recorder(ABC):
     def record(self) -> np.ndarray:
         pass
 
-    def playback(self, data: np.ndarray):
-        print("Playing recorded audio")
-        play(data, self.fs, blocking=True)
-
     def to_file(self, name, data):
         write(name, self.fs, data)
-    
-
-

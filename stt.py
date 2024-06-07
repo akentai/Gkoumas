@@ -1,12 +1,18 @@
 from lib.recording import *
 from lib.transcribing import *
 import argparse
+from scipy.io.wavfile import read
+from sounddevice import play, wait
 
 
 if __name__ == "__main__":
 
     # Parsing audio data
     parser = argparse.ArgumentParser(prog="sst")
+
+    # Input file
+    parser.add_argument("-i", "--input",
+                        default=None, help="Path to audio file")
 
     # Recording arguments
     parser.add_argument("-r", "--recorder",
@@ -21,28 +27,41 @@ if __name__ == "__main__":
 
     # Transcribing arguments
     parser.add_argument("-t", "--transcriber", default="whisper",
-                        choices=["whisper", "deepgram"], help="""Decide the
+                        choices=["whisper", "deepgram", "speechmatics"], help="""Decide the
                         type of transcriber""")
 
     args = parser.parse_args()
 
-    if args.recorder == "keypress":
-        recorder = KeyPressRecorder()
+    if args.input is not None:
+        filename = args.input
     else:
-        recorder = TimerRecorder(stop_interval=args.stop_interval)
+        # Use microphone recording
+        filename = "record.wav"
 
-    data = recorder.record()
+        if args.recorder == "keypress":
+            recorder = KeyPressRecorder()
+        else:
+            recorder = TimerRecorder(stop_interval=args.stop_interval)
 
-    recorder.to_file("record.wav", data)
+        data = recorder.record()
+
+        recorder.to_file(filename, data)
 
     if args.play:
-        recorder.playback(data)
+        fs, data = read(filename)
+        play(data, fs)
 
     if args.transcriber == "whisper":
-        transcriber = WhisperTranscriber()
-    else:
+        transcriber = WhisperTranscriber(model="small")
+    elif args.transcriber == "deepgram":
         transcriber = DeepgramTranscriber()
+    elif args.transcriber == "speechmatics":
+        transcriber = SpeechmaticsTranscriber()
+    else:
+        raise RuntimeError("Improper transcriber provided")
 
     print()
-    print(transcriber.transcribe("record.wav"))
+    print(transcriber.transcribe(filename))
     print()
+
+    wait()
