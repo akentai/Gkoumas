@@ -1,5 +1,5 @@
 # Gkoumas
-This is the group project of Dimitris and Stratos for a Voice Assistant which can be used for Educational purpose in Dutch environment.
+This is the group project of Dimitris for a Voice Assistant which can be used for Educational purpose in Dutch environment.
 
 [Project Management Page](https://docs.google.com/spreadsheets/d/1Mk_LopbRcgjdDRA6spxBz9kBBXhoJNzxNEPxIUwL0a8/edit?usp=sharing)
 
